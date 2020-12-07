@@ -1,0 +1,19 @@
+{
+    "name": "muyiwa/dojah",
+    "description": "a php package to handle the api calls to the dojah platform",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "olumuyiwa",
+            "email": "olumuyiwa@elta.solutions"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "autoload": {
+        "psr-4": {"muyiwa\\dojah\\" : "src/"}
+    }
+}
