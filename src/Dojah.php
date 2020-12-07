@@ -1,5 +1,7 @@
 <?php
 
+namespace muyiwa\dojah;
+
 class Dojah{
     public $baseUrl;
     private $dojah_key;
