@@ -50,7 +50,7 @@ now you can call methods on the dojah object created above
 
 //to fetch your dojah balance
 
-$dojah->fetchBalance(); 
+$dojah->getBalance(); 
 
 
 Full code
@@ -65,7 +65,7 @@ $dojah->setSecretKey("test_sk_hqnCg9JOYcIEeJN2QVMFIkiNU"); //set authorization s
 
 $dojah->setAppId("5fc9fd6eb8c8e4003e08df8b"); //set app id
 
-echo $dojah->fetchBalance(); //to fetch your dojah balance
+echo $dojah->getBalance(); //to fetch your dojah balance
 
 Result
 {"entity":{"wallet_balance":"0.00"}}
