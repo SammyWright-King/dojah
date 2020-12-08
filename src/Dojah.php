@@ -4,8 +4,8 @@ namespace muyiwa\dojah;
 
 class Dojah{
     public $baseUrl;
-    private $dojah_secret_key;
-    private $appId;
+    protected $dojah_secret_key;
+    protected $appId;
 
 
     //set base url
@@ -73,11 +73,12 @@ class Dojah{
     //run with additional body parameters and continuation of site url
     public function runWithParam($site, $arr){
         $url = $this->baseUrl. $site;
-
-        $postRequest = $arr;
+        $fields = arr;
+        $postRequest = http_build_query($fields);
 
         $cURLConnection = curl_init();
         curl_setopt($cURLConnection, CURLOPT_URL, $url);
+        curl_setopt($cURLConnection,CURLOPT_POST, true);
         curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(

@@ -76,5 +76,5 @@ class KYC extends Dojah
         ];
         return $this->runWithParam('/api/v1/kyc/cac', $arr);
     }
-    
+
 }

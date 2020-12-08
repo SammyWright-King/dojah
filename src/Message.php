@@ -9,8 +9,13 @@ class Message extends Dojah{
     }
 
     //deliver transactional messages to your users via SMS or Whatsapp
-    public function sendMessage(){
-        $arr = [];
+    public function sendMessage(boolean $priority, $channel, $message, $destination_no, $sender_id){
+        $arr = [
+            "channel" => $channel,
+            "message" => $message,
+            "destination" => $destination_no,
+            "sender_id" => $sender_id
+        ];
         return $this->runWithParam("/api/v1/messaging/sms", $arr);
     }
 
