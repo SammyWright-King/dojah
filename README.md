@@ -12,7 +12,7 @@ composer require muyiwa/dojah
 or add the following line to the require block to your composer.json file and run composer install
 
 "require": {
-        "muyiwa/dojah": "1.0.*"
+        "muyiwa/dojah": "v1.0.*"
 },
 
 Usage
