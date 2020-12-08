@@ -52,10 +52,9 @@ class Dojah{
         ];
     }
 
-    //fetch balance
-    public function fetchBalance(){
-
-        $url = $this->baseUrl. "/api/v1/balance";
+    //run without any body parameters, just continuation of site url
+    public function runWithoutParam($site){
+        $url = $this->baseUrl. $site;
         $cURLConnection = curl_init();
 
         curl_setopt($cURLConnection, CURLOPT_URL, $url);
@@ -69,7 +68,31 @@ class Dojah{
         //curl_close($cURLConnection);
 
         return $balance;
+    }
 
+    //run with additional body parameters and continuation of site url
+    public function runWithParam($site, $arr){
+        $url = $this->baseUrl. $site;
 
+        $postRequest = $arr;
+
+        $cURLConnection = curl_init();
+        curl_setopt($cURLConnection, CURLOPT_URL, $url);
+        curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
+        curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
+            "Authorization: ". $this->dojah_secret_key ,
+            "AppId: ". $this->appId,
+        ));
+
+        $result = curl_exec($cURLConnection);
+        curl_close($cURLConnection);
+
+        return $result;
+    }
+
+    //fetch dojah balance
+    public function getBalance(){
+        return $this->runWithoutParam("/api/v1/balance");
     }
 }
