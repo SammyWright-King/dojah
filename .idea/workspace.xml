@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="79b67396-bdba-4771-ba2e-1bf3d931ef8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KYC.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/KYC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dojah.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dojah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,7 @@
       <updated>1607344395920</updated>
       <workItem from="1607344397924" duration="5516000" />
       <workItem from="1607358877950" duration="9709000" />
+      <workItem from="1607459613853" duration="223000" />
     </task>
     <servers />
   </component>
@@ -71,6 +73,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="397" y="391" key="NewPhpFileDialog" timestamp="1607432976106">

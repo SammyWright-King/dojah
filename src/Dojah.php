@@ -4,11 +4,11 @@ namespace muyiwa\dojah;
 
 class Dojah{
     public $baseUrl;
-    private $dojah_secret_key;
-    private $appId;
+    protected $dojah_secret_key;
+    protected $appId;
 
 
-    //set base url
+    //set base url 
     public function setBaseUrl($base_url){
         $this->baseUrl = $base_url;
     }
