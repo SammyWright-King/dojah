@@ -9,7 +9,7 @@ class KYC extends Dojah
         $arr = [
             "bvn" => $bvn
         ];
-        return $this->runWithParam('/api/v1/kyc/bvn/basic', $arr);
+        return $this->runWithBody('/api/v1/kyc/bvn/basic', $arr,  "GET");
     }
 
     //lookup full bvn
@@ -18,7 +18,7 @@ class KYC extends Dojah
         $arr = [
             "bvn" => $bvn
         ];
-        return $this->runWithParam('/api/v1/kyc/bvn/full', $arr);
+        return $this->runWithBody('/api/v1/kyc/bvn/full', $arr,  'GET');
     }
 
     //get customer information with the nuban
@@ -37,7 +37,7 @@ class KYC extends Dojah
         $arr = [
             'tin' => $tin
         ];
-        return $this->runWithParam('/api/v1/kyc/tin', $arr);
+        return $this->runWithBody('/api/v1/kyc/tin', $arr, 'GET');
     }
 
     //lookup vin, read documentation on usage
@@ -48,7 +48,7 @@ class KYC extends Dojah
             'state' => $state,
             'vin' => $vin
         ];
-        return $this->runWithParam('/api/v1/kyc/vin', $arr);
+        return $this->runWithBody('/api/v1/kyc/vin', $arr, "GET");
     }
 
     //lookup nin, fetch customers details using the National Identification Number(NIN) of the customer
@@ -56,7 +56,7 @@ class KYC extends Dojah
         $arr = [
             'nin' => $nin
         ];
-        return $this->runWithParam('/api/v1/kyc/nin/', $arr);
+        return $this->runWithBody('/api/v1/kyc/nin/', $arr, "GET");
     }
 
     //This endpoint allows you to validate the customer's Driver's license using the driving license number of the customer.
@@ -65,16 +65,23 @@ class KYC extends Dojah
             'license_number' => $license_no,
             'dob' => $dob
         ];
-        return $this->runWithParam('/api/v1/kyc/dl', $arr);
+        return $this->runWithBody('/api/v1/kyc/dl', $arr, "GET");
     }
 
     //This endpoint allows developers to fetch CAC  information of customers' company/organization.
-    public function getCAC($rc_no, $company_name){
+    public function lookupCAC($rc_no, $company_name){
         $arr = [
             'rc_number' => $rc_no,
             'company_name' => $company_name
         ];
-        return $this->runWithParam('/api/v1/kyc/cac', $arr);
+        return $this->runWithBody('/api/v1/kyc/cac', $arr, "GET");
     }
     
+    //This endpoint gets user details from phonenumber
+    public function lookupPhoneNo($number){
+        $arr = [
+            'phone_number' => $number
+        ];
+        return $this->runWithBody('/api/v1/kyc/phone_number', $arr, "GET");
+    }
 }

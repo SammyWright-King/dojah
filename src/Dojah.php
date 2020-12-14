@@ -74,7 +74,9 @@ class Dojah{
     public function runWithParam($site, $arr){
         $url = $this->baseUrl. $site;
 
-        $postRequest = $arr;
+        $fields = $arr;
+
+        $postRequest = http_build_query($fields);
 
         $cURLConnection = curl_init();
         curl_setopt($cURLConnection, CURLOPT_URL, $url);
@@ -94,5 +96,32 @@ class Dojah{
     //fetch dojah balance
     public function getBalance(){
         return $this->runWithoutParam("/api/v1/balance");
+    }
+
+     //run with additional body parameters, method and continuation of site url
+     public function runWithBody($site, $arr, $method){
+        $url = $this->baseUrl. $site;
+
+        $fields = $arr;
+
+        $postRequest = http_build_query($fields);
+
+        $cURLConnection = curl_init();
+        curl_setopt($cURLConnection, CURLOPT_URL, $url);
+        curl_setopt($cURLConnection, CURLOPT_POST, true);
+        curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
+        
+            curl_setopt($cURLConnection, CURLOPT_CUSTOMREQUEST, $method);
+        
+        curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
+            "Authorization: ". $this->dojah_secret_key ,
+            "AppId: ". $this->appId,
+        ));
+        curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($cURLConnection);
+
+        //curl_close($cURLConnection);
+
+        return $result;
     }
 }
