@@ -36,7 +36,7 @@ class Finance extends Dojah{
         return $this->runWithBody("/api/v1/financial/account_transactions", $arr, "GET");
     }
 
-    //retrieve recurring payments what occur periodically from transactions
+    //retrieve recurring payments that occur periodically from transactions
     public function subscriptions($account_id, $status = null, $start_date = null, $end_date = null){
         $arr = [
             'account_id' => $account_id,

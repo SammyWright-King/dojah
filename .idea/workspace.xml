@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="79b67396-bdba-4771-ba2e-1bf3d931ef8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dojah.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dojah.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KYC.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/KYC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +59,17 @@
       <workItem from="1607933608811" duration="599000" />
       <workItem from="1607940390654" duration="21000" />
       <workItem from="1607942072440" duration="20000" />
+      <workItem from="1607951335190" duration="8000" />
+      <workItem from="1607961774088" duration="4000" />
+      <workItem from="1608123347371" duration="626000" />
+      <workItem from="1608138806486" duration="835000" />
+      <workItem from="1608216750211" duration="10000" />
+      <workItem from="1608219006002" duration="1200000" />
+      <workItem from="1608220873028" duration="610000" />
+      <workItem from="1608224388777" duration="598000" />
+      <workItem from="1608309967597" duration="598000" />
+      <workItem from="1608555665321" duration="600000" />
+      <workItem from="1608557661836" duration="264000" />
     </task>
     <servers />
   </component>
