@@ -99,7 +99,7 @@ class Dojah{
     }
 
      //run with additional body parameters, method and continuation of site url
-     public function runWithBody($site, $arr, $method){
+    public function runWithBody($site, $arr, $method=null){
         $url = $this->baseUrl. $site;
 
         $fields = $arr;
@@ -107,12 +107,21 @@ class Dojah{
         $postRequest = http_build_query($fields);
 
         $cURLConnection = curl_init();
-        curl_setopt($cURLConnection, CURLOPT_URL, $url);
-        curl_setopt($cURLConnection, CURLOPT_POST, true);
-        curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
-        
+
+        if($method == "GET"){
+            //add param to url
+            $url = $url."?".$postRequest;
+
+            curl_setopt($cURLConnection, CURLOPT_URL, $url);
+            curl_setopt($cURLConnection, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($cURLConnection, CURLOPT_FOLLOWLOCATION, TRUE);
+        }
+        else if($method == "POST"){
+            curl_setopt($cURLConnection, CURLOPT_URL, $url);
+            curl_setopt($cURLConnection, CURLOPT_POST, true);
+            curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
             curl_setopt($cURLConnection, CURLOPT_CUSTOMREQUEST, $method);
-        
+        }
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
             "Authorization: ". $this->dojah_secret_key ,
             "AppId: ". $this->appId,

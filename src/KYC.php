@@ -4,6 +4,7 @@ namespace muyiwa\dojah;
 
 class KYC extends Dojah
 {
+
     public function lookUpBasicBvn($bvn)
     {
         $arr = [
@@ -28,7 +29,7 @@ class KYC extends Dojah
             "account_number" => $account_number,
             "bank_code" => $bank_code
         ];
-        return $this->runWithParam('/api/v1/kyc/bvn/full', $arr);
+        return $this->runWithBody('/api/v1/kyc/nuban', $arr, 'GET');
 
     }
 
