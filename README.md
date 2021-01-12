@@ -244,6 +244,7 @@ $msg->sendOTP($sender_id, $mobile_no, $channel);
 $msg->validateOTP($code, $reference_id);
 
 Full Code
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 use muyiwa\dojah\Message;
