@@ -98,6 +98,10 @@ class Dojah{
         return $this->runWithoutParam("/api/v1/balance");
     }
 
+    public function getBanks(){
+        return $this->runWithoutParam("/api/v1/general/banks");
+    }
+
      //run with additional body parameters, method and continuation of site url
     public function runWithBody($site, $arr, $method=null){
         $url = $this->baseUrl. $site;
