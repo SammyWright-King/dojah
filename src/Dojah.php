@@ -102,6 +102,16 @@ class Dojah{
         return $this->runWithoutParam("/api/v1/general/banks");
     }
 
+    public function resolveNuban($bank_code, $account_number){
+        $arr = [
+            "bank_code" => $bank_code,
+            "account_number" => $account_number,
+            
+        ];
+        return $this->runWithBody('/api/v1/general/account/', $arr, 'GET');
+    }
+
+
      //run with additional body parameters, method and continuation of site url
     public function runWithBody($site, $arr, $method=null){
         $url = $this->baseUrl. $site;
