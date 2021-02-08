@@ -8,9 +8,8 @@ class NGWallet extends Dojah{
      * required fields are bvn, firstname, lastname, phone number and dob
      * dob format would be 07-Aug-1958
      */
-    public function createWallet($bvn, $mobile, $dob, $firstname, $lastname, $middlename=NULL){
+    public function createWallet($mobile, $dob, $firstname, $lastname, $middlename=NULL, $bvn=NULL){
         $arr = [
-            "bvn" => $bvn,
             "phone_number" => $mobile,
             "dob" => $dob,
             "first_name" => $firstname,
@@ -18,6 +17,9 @@ class NGWallet extends Dojah{
         ];
         if(isset($middlename)){
             $arr["middle_name"] = $middlename;
+        }
+        if(isset($bvn)){
+            $arr['bvn'] = $bvn;
         }
         return $this->runWithBody("/api/v1/wallet/ngn/create", $arr, 'POST');
     }
