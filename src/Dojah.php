@@ -4,9 +4,16 @@ namespace muyiwa\dojah;
 
 class Dojah{
     public $baseUrl;
-    protected $dojah_secret_key;
+    protected $secret_key;
     protected $appId;
 
+    public function useSandBox(){
+        $this->baseUrl = "https://sandbox.dojah.io";
+    }
+
+    public function useProduction(){
+        $this->baseUrl = "https://api.dojah.io";
+    }
 
     //set base url 
     public function setBaseUrl($base_url){
@@ -30,24 +37,24 @@ class Dojah{
 
     //set dojah secret key
     public function setSecretkey($secret_key){
-        $this->dojah_secret_key = $secret_key;
+        $this->secret_key = $secret_key;
     }
 
     //get dojah secret key
     public function getSecretkey(){
-        return $this->dojah_secret_key;
+        return $this->secret_key;
     }
 
     //set dojah header parameters
     public function setHeader($secretKey, $app_id){
-        $this->dojah_secret_key = $secretKey;
+        $this->secret_key = $secretKey;
         $this->appId = $app_id;
     }
 
     //get dojah header parameters
     public function getHeader(){
         return [
-             $this->dojah_secret_key,
+             $this->secret_key,
              $this->appId
         ];
     }
@@ -60,7 +67,7 @@ class Dojah{
         curl_setopt($cURLConnection, CURLOPT_URL, $url);
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
-            "Authorization: ". $this->dojah_secret_key ,
+            "Authorization: ". $this->secret_key ,
             "AppId: ". $this->appId,
         ));
 
@@ -83,7 +90,7 @@ class Dojah{
         curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
-            "Authorization: ". $this->dojah_secret_key ,
+            "Authorization: ". $this->secret_key ,
             "AppId: ". $this->appId,
         ));
 
@@ -111,7 +118,6 @@ class Dojah{
         return $this->runWithBody('/api/v1/general/account/', $arr, 'GET');
     }
 
-
      //run with additional body parameters, method and continuation of site url
     public function runWithBody($site, $arr, $method=null){
         $url = $this->baseUrl. $site;
@@ -137,7 +143,7 @@ class Dojah{
             curl_setopt($cURLConnection, CURLOPT_CUSTOMREQUEST, $method);
         }
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array(
-            "Authorization: ". $this->dojah_secret_key ,
+            "Authorization: ". $this->secret_key ,
             "AppId: ". $this->appId,
         ));
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
