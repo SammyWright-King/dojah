@@ -13,9 +13,9 @@ class Dojah{
         $this->secret_key = $secretKey;
         $this->appId = $appId;
         
-        if(strcasecmp($env, "SANDBOX")){
+        if(strcasecmp($env, "SANDBOX") == 0){
             $this->baseUrl = "https://sandbox.dojah.io";
-        }elseif (strcasecmp($env, "PRODUCTION")){
+        }elseif (strcasecmp($env, "PRODUCTION") == 0){
             $this->baseUrl = "https://api.dojah.io";
         }
     }
@@ -24,9 +24,9 @@ class Dojah{
     public function setEnvironment($env){
         $this->env = $env;
 
-        if(strcasecmp($env, "SANDBOX")){
+        if(strcasecmp($env, "SANDBOX") == 0){
             $this->baseUrl = "https://sandbox.dojah.io";
-        }elseif (strcasecmp($env, "PRODUCTION")){
+        }elseif (strcasecmp($env, "PRODUCTION") == 0){
             $this->baseUrl = "https://api.dojah.io";
         }
     }

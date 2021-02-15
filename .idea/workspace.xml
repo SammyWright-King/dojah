@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79b67396-bdba-4771-ba2e-1bf3d931ef8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dojah.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dojah.php" afterDir="false" />
-    </list>
+    <list default="true" id="79b67396-bdba-4771-ba2e-1bf3d931ef8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,6 +69,7 @@
       <workItem from="1608555665321" duration="600000" />
       <workItem from="1608557661836" duration="264000" />
       <workItem from="1613394144552" duration="1922000" />
+      <workItem from="1613402570367" duration="306000" />
     </task>
     <servers />
   </component>
