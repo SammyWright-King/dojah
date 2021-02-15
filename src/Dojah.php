@@ -8,7 +8,7 @@ class Dojah{
     protected $secret_key;
     protected $appId;
 
-    public function __construct($env, $appId, $secretKey){
+    public function __construct($env=null, $appId=null, $secretKey=null){
         $this->env = $env;
         $this->secret_key = $secretKey;
         $this->appId = $appId;
