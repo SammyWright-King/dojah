@@ -4,15 +4,31 @@ namespace muyiwa\dojah;
 
 class Dojah{
     public $baseUrl;
+    public $env;
     protected $secret_key;
     protected $appId;
 
-    public function useSandBox(){
-        $this->baseUrl = "https://sandbox.dojah.io";
+    public function __construct($env, $appId, $secretKey){
+        $this->env = $env;
+        $this->secret_key = $secretKey;
+        $this->appId = $appId;
+
+        if($env == "SANDBOX"){
+            $this->baseUrl = "https://sandbox.dojah.io";
+        }elseif ($env == "PRODUCTION"){
+            $this->baseUrl = "https://api.dojah.io";
+        }
     }
 
-    public function useProduction(){
-        $this->baseUrl = "https://api.dojah.io";
+    //set environment and baseurl
+    public function setEnvironment($env){
+        $this->env = $env;
+
+        if($env == "SANDBOX"){
+            $this->baseUrl = "https://sandbox.dojah.io";
+        }elseif ($env == "PRODUCTION"){
+            $this->baseUrl = "https://api.dojah.io";
+        }
     }
 
     //set base url 
