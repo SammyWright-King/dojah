@@ -48,6 +48,17 @@ class NGWallet extends Dojah{
         return $this->runWithBody("/api/v1/wallet/ngn/transfer", $arr, 'POST');
     }
     /**
+     * transfer funds without the wallet id
+     */
+    public function transfer($rec_act_no, $rec_bank_code, $amount){
+        $arr = [
+            "recipient_account_number" => $rec_act_no,
+            "recipient_bank_code"  => $rec_bank_code,
+            "amount" => $amount
+        ];
+        return $this->runWithBody("/api/v1/wallet/ngn/transfer/pull", $arr, 'POST');
+    }
+    /**
      * GET transaction details
      * required arguement is the transaction id
      */
