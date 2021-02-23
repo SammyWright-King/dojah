@@ -38,24 +38,30 @@ class NGWallet extends Dojah{
      * required paramets are wallet id(string), recipient account(number)
      * recipient bank code(nmber) amount(number)
      */
-    public function transferFunds($wallet_id, $rec_act_no, $rec_bank_code, $amount){
+    public function transferFunds($wallet_id, $rec_act_no, $rec_bank_code, $amount, $remarks=NULL){
         $arr = [
             "wallet_id" => $wallet_id,
             "recipient_account_number" => $rec_act_no,
             "recipient_bank_code"  => $rec_bank_code,
             "amount" => $amount
         ];
+        if(isset($remarks)){
+            $arr['remarks'] = $remarks;
+        }
         return $this->runWithBody("/api/v1/wallet/ngn/transfer", $arr, 'POST');
     }
     /**
      * transfer funds without the wallet id
      */
-    public function transfer($rec_act_no, $rec_bank_code, $amount){
+    public function transfer($rec_act_no, $rec_bank_code, $amount, $remarks=NULL){
         $arr = [
             "recipient_account_number" => $rec_act_no,
             "recipient_bank_code"  => $rec_bank_code,
-            "amount" => $amount
+            "amount" => $amount,
         ];
+        if(isset($remark)){
+            $arr['remarks'] = $remarks;
+        }
         return $this->runWithBody("/api/v1/wallet/ngn/transfer/pool", $arr, 'POST');
     }
     /**
