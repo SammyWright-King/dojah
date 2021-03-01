@@ -53,8 +53,9 @@ class NGWallet extends Dojah{
     /**
      * transfer funds without the wallet id
      */
-    public function transfer($rec_act_no, $rec_bank_code, $amount, $remarks=NULL){
+    public function transfer($sender_act, $rec_act_no, $rec_bank_code, $amount, $remarks=NULL){
         $arr = [
+            "sender_account_number" => $sender_act,
             "recipient_account_number" => $rec_act_no,
             "recipient_bank_code"  => $rec_bank_code,
             "amount" => $amount,
