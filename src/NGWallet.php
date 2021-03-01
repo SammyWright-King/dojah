@@ -59,10 +59,9 @@ class NGWallet extends Dojah{
             "recipient_account_number" => $rec_act_no,
             "recipient_bank_code"  => $rec_bank_code,
             "amount" => $amount,
+            "remarks" => $remarks,
         ];
-        if(isset($remark)){
-            $arr['remarks'] = $remarks;
-        }
+       
         return $this->runWithBody("/api/v1/wallet/ngn/transfer/pool", $arr, 'POST');
     }
     /**
