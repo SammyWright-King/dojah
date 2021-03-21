@@ -40,12 +40,20 @@ class Message extends Dojah{
     }
 
     //send otp
-    public function sendOTP($sender_id, $mobile_no, $channel){
+    public function sendOTP( $sender_id, $mobile_no, $channel, $length=6, $expiry= 10){
         $arr = [
             'sender_id' => $sender_id,
             'destination' => $mobile_no,
             'channel' => $channel
         ];
+
+        if(isset($expiry)){
+            $arr['expiry'] = $expiry;
+        }
+        if(isset($length)){
+            $arr['length'] = $length;
+        }
+
         return $this->runWithBody('/api/v1/messaging/otp', $arr, 'POST');
     }
 
