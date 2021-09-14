@@ -74,5 +74,17 @@ class NGWallet extends Dojah{
         ];
         return $this->runWithBody("/api/v1/wallet/ngn/transaction", $arr, 'GET');
     }
+    /**
+     * transfer funds Internally
+     */
+    public function internalTransfer($sender_wallet_id, $recipient_wallet_id, $amount){
+        $arr = [
+            "sender_wallet_id" => $sender_wallet_id,
+            "recipient_wallet_id" => $recipient_wallet_id,
+            "amount" => $amount,
+        ];
+        return $this->runWithBody("/api/v1/wallet/ngn/transfer/internal", $arr, 'POST');
+    }
+
     
 }
