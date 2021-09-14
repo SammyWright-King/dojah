@@ -85,4 +85,5 @@ class NGWallet extends Dojah{
         ];
         return $this->runWithBody("/api/v1/wallet/ngn/transfer/internal", $arr, 'POST');
     }
+    
 }
