@@ -6,7 +6,7 @@ class NGWallet extends Dojah{
     /**
      * create wallet in naira and transfer to other naira accounts
      * required fields are bvn, firstname, lastname, phone number and dob
-     * dob format would be 07-Aug-1958
+     * dob format would be 07-Aug-1958.
      */
     public function createWallet($mobile, $dob, $firstname, $lastname, $middlename=NULL, $bvn=NULL, $route='WEMA'){
         $arr = [
